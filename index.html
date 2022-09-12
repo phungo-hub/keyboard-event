@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Keyboard Event</title>
+</head>
+<body>
+    <img id="nobita" src="https://upload.wikimedia.org/wikipedia/vi/2/2c/Nobita.png" alt="" width="10%" style="position: absolute; left:0;top:0">
+    <script>
+        let nobita = document.getElementById('nobita')
+        function rightPressed() {
+            nobita.style.left = parseInt(nobita.style.left) + 5 + 'px';
+        }
+
+        function leftPressed() {
+                nobita.style.left = parseInt(nobita.style.left) - 5 + 'px';
+        }
+
+        function topPressed() {
+            nobita.style.top = parseInt(nobita.style.top) - 5 + 'px';
+        }
+
+        function botPressed() {
+            nobita.style.top = parseInt(nobita.style.top) + 5 + 'px';
+        }
+
+        function moveSelection(evt) {
+            switch (evt.keyCode){
+                case 37:
+                    leftPressed()
+                    break;
+                case 38:
+                    topPressed()
+                    break;
+                case 39:
+                    rightPressed()
+                    break;
+                case 40:
+                    botPressed()
+                    break;
+            }
+        }
+
+        window.addEventListener("keydown", moveSelection)
+    </script>
+</body>
+</html>
